@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:4000', //  backend URL
+        target: 'https://job-portal-server-6nto.onrender.com', //  backend URL
         changeOrigin: true,
         secure: false,
       }

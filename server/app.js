@@ -54,7 +54,7 @@ const app = express();
 config({ path: "./.env" });
 
 // ✅ CORS setup: dynamic origin echoing so Access-Control-Allow-Origin is not '*'
-const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173", "http://localhost:5174"].filter(Boolean);
+const allowedOrigins = ['https://job-portal-six-delta.vercel.app', "http://localhost:5173", "http://localhost:5174"].filter(Boolean);
 
 app.use(
   cors({

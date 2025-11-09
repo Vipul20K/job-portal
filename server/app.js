@@ -58,12 +58,13 @@ const allowedOrigins = [process.env.FRONTEND_URL, "http://localhost:5173", "http
 
 app.use(
   cors({
-    origin: function (incomingOrigin, callback) {
-      // allow non-browser tools or same-origin requests
-      if (!incomingOrigin) return callback(null, true);
-      if (allowedOrigins.indexOf(incomingOrigin) !== -1) return callback(null, true);
-      return callback(new Error("CORS policy: Origin not allowed"), false);
-    },
+    // origin: function (incomingOrigin, callback) {
+    //   // allow non-browser tools or same-origin requests
+    //   if (!incomingOrigin) return callback(null, true);
+    //   if (allowedOrigins.indexOf(incomingOrigin) !== -1) return callback(null, true);
+    //   return callback(new Error("CORS policy: Origin not allowed"), false);
+    // },
+    origin: allowedOrigins,
     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],

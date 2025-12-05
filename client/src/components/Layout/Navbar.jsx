@@ -11,7 +11,7 @@ import { AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthorized, setIsAuthorized, user } = useContext(Context);
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -21,7 +21,7 @@ const Navbar = () => {
       );
       toast.success(response.data.message);
       setIsAuthorized(false);
-      navigateTo("/login");
+      navigate("/login");
     } catch (error) {
       toast.error(error.response?.data?.message || "Logout failed");
       setIsAuthorized(true);
